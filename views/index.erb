@@ -1,0 +1,326 @@
+<html>
+<head>
+	
+	<title><%= @title %></title>
+
+	<link href="<%= url('/styles/styles.css') %>" rel="stylesheet" type="text/css" />
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-1131882-11', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+</head>
+<body>
+	<h1><%= @title %></h1>
+
+	<h2>THE MANY FORMS OF SWIFT FUNCTIONS - A CHEATSHEET</h2>
+
+<div class="syntaxBlock">
+
+	<div class="titleSpan">
+		No parameters, no return value
+	</div>
+
+ 	<div class="functionBlock">
+		func foo()
+	</div>
+	
+	<div class="callBlock">
+		called with
+ 	</div>
+	
+	<div class="usageBlock">
+		foo()
+	</div>
+	
+</div class="syntaxBlock">
+ 
+<div class="syntaxBlock">
+	
+	<div class="titleSpan">
+		No parameters, return type
+	</div>
+
+ 	<div class="functionBlock">
+		func foo() -&gt; Int
+	</div>
+	
+	<div class="callBlock">
+		called with
+ 	</div>
+	
+	<div class="usageBlock">
+		var a = foo()
+	</div>
+	
+</div class="syntaxBlock">
+ 
+<div class="syntaxBlock">
+	
+ 	<div class="titleSpan">
+ 		Single parameter, no return value
+ 	</div>
+
+  	<div class="functionBlock">
+ 		func foo(bar: Int)
+ 	</div>
+	
+ 	<div class="callBlock">
+ 		called with
+  	</div>
+	
+ 	<div class="usageBlock">
+ 		foo(10)
+ 	</div>
+	
+ </div class="syntaxBlock">
+ 
+<div class="syntaxBlock">
+
+ 	<div class="titleSpan">
+ 		Single parameter, return value
+ 	</div>
+
+  	<div class="functionBlock">
+ 		func foo(bar: Int) -&gt; Int
+ 	</div>
+	
+ 	<div class="callBlock">
+ 		called with
+  	</div>
+	
+ 	<div class="usageBlock">
+ 		var a = foo(10)
+ 	</div>
+	
+ </div class="syntaxBlock">
+ 
+<div class="syntaxBlock">
+
+ 	<div class="titleSpan">
+ 		Multiple parameters, return value
+ 	</div>
+
+  	<div class="functionBlock">
+ 		func foo(bar: int, bash: String) -&gt; Int
+ 	</div>
+	
+ 	<div class="callBlock">
+ 		called with
+  	</div>
+	
+ 	<div class="usageBlock">
+ 		var a = foo(10, "hello")
+ 	</div>
+	
+</div class="syntaxBlock">
+
+<div class="syntaxBlock">
+
+ 	<div class="titleSpan">
+ 		One or more parameters, multiple return values
+ 	</div>
+
+  	<div class="functionBlock">
+ 		func foo(bar: Int) -&gt; (bash: Int, baz: String)
+ 	</div>
+	
+ 	<div class="callBlock">
+ 		called with
+  	</div>
+	
+ 	<div class="usageBlock">
+		var a = foo(10, "Hello")</br>
+ 	    <br/>
+		a.bash = 22</br>
+		a.baz = "..."
+ 	</div>
+	
+</div class="syntaxBlock">
+
+<div class="syntaxBlock">
+
+ 	<div class="titleSpan">
+		One or more parameters, optional multiple return values
+ 	</div>
+
+  	<div class="functionBlock">
+		func foo(bar: Int) -&gt; (bash: Int, baz: String)?
+ 	</div>
+	
+ 	<div class="callBlock">
+ 		called with
+  	</div>
+	
+ 	<div class="usageBlock">
+	if let a = foo(10) {<br/>
+	&nbsp;&nbsp;println ("Bash is \(bash) and baz is \(baz)")</br>
+	}
+ 	</div>
+	
+</div class="syntaxBlock">
+
+<div class="syntaxBlock">
+
+	<div class="titleSpan">
+		Shorthand external parameter names
+ 	</div>
+
+  	<div class="functionBlock">
+		func foo(#bar: Int, #bash: String) -&gt; Int
+ 	</div>
+	
+ 	<div class="callBlock">
+ 		called with
+  	</div>
+	
+ 	<div class="usageBlock">
+		var a = foo(bar: 10, bash: "Bling!")
+ 	</div>
+	
+</div class="syntaxBlock">
+
+<div class="syntaxBlock">
+
+	<div class="titleSpan">
+		External parameter names with default parameters
+ 	</div>
+
+  	<div class="functionBlock">
+		func foo(#bar: Int, bash: String = "bash!") -&gt; Int
+ 	</div>
+	
+ 	<div class="callBlock">
+ 		called with
+  	</div>
+	
+ 	<div class="usageBlock">
+		var a = foo(bar: 10)<br/>
+			<div class="commentBlock">
+				# println(bar) => "10"<br/>
+		    	# println(bash) => "bash!"
+			</div>
+		var b = foo(bar: 10, bash: "Bling!")
+			<div class="commentBlock">
+				# println(bar) => "10"<br/>
+		    	# println(bash) => "Bling!"
+			</div>
+ 	</div>
+	
+</div class="syntaxBlock">
+
+<div class="syntaxBlock">
+
+	<div class="titleSpan">
+		Opting out of external parameter names with default parameters
+ 	</div>
+
+  	<div class="functionBlock">
+		func foo(bar: Int, _ bash: String = "bash!") -&gt; Int
+ 	</div>
+	
+ 	<div class="callBlock">
+ 		called with
+  	</div>
+	
+ 	<div class="usageBlock">
+		var a = foo(10)<br/>
+			<div class="commentBlock">
+				# println(bar) => "10"<br/>
+		    	# println(bash) => "bash!"
+			</div>
+		var b = foo(10, "Bling!")
+			<div class="commentBlock">
+				# println(bar) => "10"<br/>
+		    	# println(bash) => "Bling!"
+			</div>
+ 	</div>
+	
+</div class="syntaxBlock">
+<div class="syntaxBlock">
+
+	<div class="titleSpan">
+		Variadic parameters
+ 	</div>
+
+  	<div class="functionBlock">
+		func foo(bar: Int, bash: String...) -&gt; Int
+ 	</div>
+	
+ 	<div class="callBlock">
+ 		called with
+  	</div>
+	
+ 	<div class="usageBlock">
+		var a = foo(10, "Bling!", "Clang!")
+		<div class="commentBlock">
+			# println(bar) => "10"<br/>
+			# println(bash) => "[Bling!, Clang!]"<br/>
+	    	# println(bash[0]) => "Bling!"<br/>
+	    	# println(bash[1]) => "Clang!"
+		</div>
+ 	</div>
+	
+</div class="syntaxBlock">
+
+<div class="syntaxBlock">
+
+	<div class="titleSpan">
+		Variable parameters
+ 	</div>
+
+  	<div class="functionBlock">
+		func foo(var bar: Int, var bash: String) -&gt; Int
+ 	</div>
+	
+ 	<div class="callBlock">
+ 		called with
+  	</div>
+	
+ 	<div class="usageBlock">
+		var a = foo(10, "Bling!")
+ 	</div>
+	
+</div class="syntaxBlock">
+
+<div class="syntaxBlock">
+
+	<div class="titleSpan">
+		In-out parameters
+ 	</div>
+
+  	<div class="functionBlock">
+		func foo(inout bar: Int, inout bash: String)
+ 	</div>
+	
+ 	<div class="callBlock">
+ 		called with
+  	</div>
+	
+ 	<div class="usageBlock">
+		var x = 10<br/>
+		var y = "Bling!"<br/>
+		foo(&amp;x, &amp;y)
+ 	</div>
+	
+</div class="syntaxBlock">
+
+<div class="creditsBlock">
+    <p><a href="https://twitter.com/share" class="twitter-share-button" data-via="timd">Tweet</a>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></p>
+   A public service by <a href="http://twitter.com/timd">@timd</a>
+	
+</div>
+</body>
+</html>
+
+<html>
+<body>
+</body>
+</html>

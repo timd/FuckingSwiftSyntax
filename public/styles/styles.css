@@ -1,0 +1,71 @@
+body {
+    background-color: #000;
+	color: #fff;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+h1 {
+    font-size: 300%;
+    text-align: center;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 200%;
+    text-align: center;
+    color: #ffffff;
+}
+
+p {
+    color: #ffffff;
+}
+
+pre {
+	margin-left: -250px;
+	padding-bottom: 0px;
+}
+
+.footer {
+    line-height: 5000%;
+    font-size: 75%;
+    color: #ffffff;
+}
+
+a, a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.syntaxBlock {
+	margin-left: 100px;
+	margin-bottom: 50px;
+}
+
+.titleSpan {
+	font-size: 200%;
+	margin-bottom: 10px;
+}
+
+.functionBlock, .usageBlock {
+	color: #33cc33;
+	font-size: 150%;
+	font-family: "Courier New", Courier, monospace;
+	background-color: #334455;
+	padding: 10px 0px 10px 10px;
+}
+
+.callBlock {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.commentBlock {
+	padding-top: 10px;
+	padding-left: 20px;
+	padding-bottom: 10px;
+	color: #b8b8b8;
+}
+
+.creditsBlock {
+	text-align: center;
+}
